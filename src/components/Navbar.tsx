@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Brain, LogIn, Search, Upload, User, Settings, LogOut, Moon, Sun, Table, Info, HelpCircle, Code } from 'lucide-react';
+import logo from '@/assets/logo.png';
 import { useRippleEffect } from '@/lib/animations';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/contexts/AuthContext';
@@ -156,6 +157,12 @@ export const Navbar = () => {
       <TooltipProvider>
         <header className="glass-panel fixed top-6 left-1/2 transform -translate-x-1/2 z-40 rounded-lg px-1 py-1">
           <nav className="flex items-center">
+            {/* Logo and Brand */}
+            <Link to="/" className="flex items-center gap-2 px-3 mr-2">
+              <img src={logo} alt="PNL Logo" className="h-8 w-8" />
+              <span className="font-bold text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">PNL</span>
+            </Link>
+            
             {/* Cortex with submenu */}
             <NavItem
               to="#"
