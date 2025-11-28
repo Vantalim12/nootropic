@@ -136,7 +136,7 @@ export const Navbar = () => {
     setActive(id);
   };
 
-  const cortexSubmenu = [
+  const nootropicSubmenu = [
     { to: '/', icon: <Info size={18} />, label: 'What', id: 'what' },
     { to: '/why', icon: <HelpCircle size={18} />, label: 'Why', id: 'why' },
     { to: '/how', icon: <Code size={18} />, label: 'How', id: 'how' },
@@ -163,16 +163,16 @@ export const Navbar = () => {
               <span className="font-bold text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">PNL</span>
             </Link>
             
-            {/* Cortex with submenu */}
+            {/* Nootropic with submenu */}
             <NavItem
               to="#"
               icon={<Brain size={20} />}
-              label="Cortex"
+              label="Nootropic"
               active={['what', 'why', 'how'].includes(active)}
               onClick={() => {}}
               hasSubmenu={true}
             >
-              {cortexSubmenu.map((item) => (
+              {nootropicSubmenu.map((item) => (
                 <SubMenuItem
                   key={item.id}
                   to={item.to}
