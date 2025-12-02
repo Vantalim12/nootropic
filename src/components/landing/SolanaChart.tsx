@@ -9,34 +9,37 @@ export const SolanaChart = () => {
   useEffect(() => {
     if (!chartContainerRef.current) return;
 
-    const chart = createChart(chartContainerRef.current, {
-      layout: {
-        background: { type: ColorType.Solid, color: 'transparent' },
-        textColor: 'hsl(var(--foreground))',
-      },
-      grid: {
-        vertLines: { color: 'hsl(var(--border))' },
-        horzLines: { color: 'hsl(var(--border))' },
-      },
-      width: chartContainerRef.current.clientWidth,
-      height: 400,
-      timeScale: {
-        timeVisible: true,
-        secondsVisible: false,
-      },
-    });
+    try {
+      const chart = createChart(chartContainerRef.current, {
+        layout: {
+          background: { type: ColorType.Solid, color: 'transparent' },
+          textColor: '#888',
+        },
+        grid: {
+          vertLines: { color: 'rgba(42, 46, 57, 0.5)' },
+          horzLines: { color: 'rgba(42, 46, 57, 0.5)' },
+        },
+        width: chartContainerRef.current.clientWidth,
+        height: 400,
+        timeScale: {
+          timeVisible: true,
+          secondsVisible: false,
+        },
+      });
 
-    chartRef.current = chart;
+      chartRef.current = chart;
 
-    const candlestickSeries = chart.addSeries(CandlestickSeries, {
-      upColor: 'hsl(140 60% 50%)',
-      downColor: 'hsl(0 84.2% 60.2%)',
-      borderVisible: false,
-      wickUpColor: 'hsl(140 60% 50%)',
-      wickDownColor: 'hsl(0 84.2% 60.2%)',
-    });
+      const candlestickSeries = chart.addSeries(CandlestickSeries);
+      
+      candlestickSeries.applyOptions({
+        upColor: 'rgb(76, 175, 80)',
+        downColor: 'rgb(255, 82, 82)',
+        borderVisible: false,
+        wickUpColor: 'rgb(76, 175, 80)',
+        wickDownColor: 'rgb(255, 82, 82)',
+      });
 
-    candlestickSeriesRef.current = candlestickSeries;
+      candlestickSeriesRef.current = candlestickSeries;
 
     // Generate initial mock data for Solana price
     const generateMockData = () => {
@@ -109,15 +112,18 @@ export const SolanaChart = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
+      window.addEventListener('resize', handleResize);
 
-    return () => {
-      clearInterval(updateInterval);
-      window.removeEventListener('resize', handleResize);
-      if (chartRef.current) {
-        chartRef.current.remove();
-      }
-    };
+      return () => {
+        clearInterval(updateInterval);
+        window.removeEventListener('resize', handleResize);
+        if (chartRef.current) {
+          chartRef.current.remove();
+        }
+      };
+    } catch (error) {
+      console.error('Error initializing chart:', error);
+    }
   }, []);
 
   return (
