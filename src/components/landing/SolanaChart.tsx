@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { createChart, ColorType, IChartApi } from 'lightweight-charts';
+import { createChart, ColorType, IChartApi, CandlestickSeries } from 'lightweight-charts';
 
 export const SolanaChart = () => {
   const chartContainerRef = useRef<HTMLDivElement>(null);
@@ -28,7 +28,7 @@ export const SolanaChart = () => {
 
     chartRef.current = chart;
 
-    const candlestickSeries = (chart as any).addCandlestickSeries({
+    const candlestickSeries = chart.addSeries(CandlestickSeries, {
       upColor: 'hsl(140 60% 50%)',
       downColor: 'hsl(0 84.2% 60.2%)',
       borderVisible: false,
