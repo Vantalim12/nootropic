@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AnimatedTransition } from '@/components/AnimatedTransition';
 import { FeatureIllustration } from './FeatureIllustration';
 import { FeatureIcon } from './FeatureIllustrations/FeatureIcon';
+import { SolanaChart } from './SolanaChart';
 interface ManageSectionProps {
   show: boolean;
 }
@@ -54,6 +55,10 @@ export const ManageSection = ({
         <div className="flex flex-col items-center text-center gap-2 mb-12">
           <h2 className="text-4xl font-bold text-blue-600 md:text-8xl">Manage</h2>
           <p className="text-foreground max-w-3xl text-xl md:text-2xl mt-2">The first and only extension for your real mind.</p>
+        </div>
+
+        <div className="mb-12">
+          <SolanaChart />
         </div>
 
         <FeatureIllustration featureIndex={activeFeature} className="transition-all duration-500" />

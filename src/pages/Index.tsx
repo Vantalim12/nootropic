@@ -9,6 +9,7 @@ import { TestimonialsSection } from '@/components/landing/TestimonialsSection';
 import { CallToAction } from '@/components/landing/CallToAction';
 import { LoadingScreen } from '@/components/landing/LoadingScreen';
 import UseCasesSection from '@/components/landing/UseCasesSection';
+import { SocialFooter } from '@/components/landing/SocialFooter';
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
@@ -64,6 +65,9 @@ const Index = () => {
           <CallToAction show={showCallToAction} />
         </div>
       </div>
+      
+      {/* Social Footer */}
+      <SocialFooter />
     </div>
   );
 };
