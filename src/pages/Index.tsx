@@ -12,7 +12,7 @@ import UseCasesSection from '@/components/landing/UseCasesSection';
 import { SocialFooter } from '@/components/landing/SocialFooter';
 
 const Index = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const showHero = useAnimateIn(false, 300);
   const showManage = useAnimateIn(false, 600);
   const showDesign = useAnimateIn(false, 900);
