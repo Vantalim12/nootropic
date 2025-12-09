@@ -27,7 +27,7 @@ export const HeroSection = ({
         {/* Contract Address */}
         <div className="mb-6 px-6 py-3 rounded-lg bg-muted/50 border border-border inline-flex items-center gap-2">
           <span className="text-sm font-mono text-muted-foreground">Contract:</span>
-          <span className="text-sm font-mono font-semibold">TBA</span>
+          <span className="text-sm font-mono font-semibold">DinaFcGwNZJQAe4EcdHGe4u1t8eqiRsujuCYvkRnpump</span>
         </div>
         
         {/* Interactive text */}

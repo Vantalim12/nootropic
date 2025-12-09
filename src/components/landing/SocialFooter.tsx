@@ -18,13 +18,18 @@ export const SocialFooter = () => {
             <span className="font-medium">X (Twitter)</span>
           </a>
           
-          <div className="flex items-center gap-3 px-6 py-3 rounded-lg bg-card border border-border opacity-60 cursor-not-allowed min-w-[140px]">
+          <a 
+            href="https://pump.fun/coin/DinaFcGwNZJQAe4EcdHGe4u1t8eqiRsujuCYvkRnpump" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-6 py-3 rounded-lg bg-card border border-border hover:bg-primary/10 hover:border-primary/20 transition-all duration-300 min-w-[140px]"
+          >
             <img src={pumpfunLogo} alt="Pump.fun" className="w-5 h-5" />
             <span className="font-medium">Pump.fun</span>
-          </div>
+          </a>
           
           <a 
-            href="https://dexscreener.com/solana" 
+            href="https://dexscreener.com/solana/DinaFcGwNZJQAe4EcdHGe4u1t8eqiRsujuCYvkRnpump" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center gap-3 px-6 py-3 rounded-lg bg-card border border-border hover:bg-primary/10 hover:border-primary/20 transition-all duration-300 min-w-[140px]"
