@@ -12,7 +12,7 @@ export const HeroSection = ({
 }: HeroSectionProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<'scattered' | 'convergence' | 'organized'>('scattered');
-  const [heroText, setHeroText] = useState("All your notes, bookmarks, inspirations, articles and images in one single, private second brain, accessible anywhere, anytime.");
+  const [heroText, setHeroText] = useState("All your note, bookmarks, inspirations, articles and images in one single, private second brain, accessible anywhere, anytime.");
   const handleSectionClick = (section: 'scattered' | 'convergence' | 'organized', text: string) => {
     setActiveSection(section);
     setHeroText(text);
